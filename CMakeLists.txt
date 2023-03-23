@@ -15,6 +15,10 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/include
 )
 
-add_library(bigInteger src/BigInteger.cpp)
+
+add_library(bigInteger 
+src/Atomic.cpp
+src/BigInteger.cpp
+)
 add_executable(testBigInteger test/test_BigInteger.cpp)
 target_link_libraries(testBigInteger PUBLIC bigInteger)

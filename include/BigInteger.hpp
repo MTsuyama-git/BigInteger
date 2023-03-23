@@ -14,6 +14,17 @@ typedef enum
     Endian_Big,
 }Endian;
 
+class AtomicOutput
+{
+private:
+public:
+    CHUNK_TYPE carry;
+    CHUNK_TYPE output;
+private:
+public:
+    AtomicOutput(const CHUNK_TYPE&, const CHUNK_TYPE&);
+};
+
 class BigInteger
 {
 private:
@@ -24,6 +35,7 @@ Endian __endian;
 
 public:
 private:
+static AtomicOutput& carry_l_chunk(const int&, const CHUNK_TYPE&);
 public:
 BigInteger(Endian endian = Endian::Endian_Little);
 BigInteger(uint8_t, Endian endian = Endian::Endian_Little);
