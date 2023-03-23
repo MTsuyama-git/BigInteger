@@ -442,7 +442,10 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+.cmake/
 .ninja_deps
 .ninja_log
 *.ninja
 *.a
+
+testBigInteger
