@@ -8,7 +8,7 @@ if [ "$1" = "Debug" ];then
         DEST=build
         BuildType=Release
     fi
-if [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+if [ ${OS} == Windows_NT ]; then
     DEST=build    
     cmake -S . -B ${DEST}
     cmake --build ${DEST} --config ${BuildType}
